@@ -6,7 +6,7 @@
 /*   By: ldecavel <ldecavel@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 13:06:22 by ldecavel          #+#    #+#             */
-/*   Updated: 2025/12/10 18:51:52 by ldecavel         ###   ########.fr       */
+/*   Updated: 2025/12/10 23:16:02 by nlallema         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,35 +16,44 @@
 #include "operations.h" // to remove
 #include "debug.h" // to remove
 
+static double	_compute_disorder(t_stack *stack)
+{
+	double	mistakes;
+	double	total_pairs;
+	t_node	*current;
+	t_node	*sub_current;
+
+	if (!stack || stack->a == NULL)
+		return (0.);
+	total_pairs = 0;
+	mistakes = 0;
+	current = stack->a;
+	while (current->next != stack->a)
+	{
+		sub_current = current->next;
+		while (sub_current != stack->a)
+		{
+			total_pairs++;
+			if (current->value > sub_current->value)
+				mistakes++;
+			sub_current = sub_current->next;
+		}
+		current = current->next;
+	}
+	if (total_pairs == 0)
+		return (0.);
+	return (mistakes / total_pairs);
+}
+
 int	main(int ac, char **av)
 {
 	t_info	info;
 	t_stack	stack;
 
 	parse(ac, av, &info, &stack);
-	print_stack(&stack); // to del
-	pa(&stack);
-	print_stack(&stack);
-	sa(&stack);
-	print_stack(&stack);
-	pa(&stack);
-	print_stack(&stack);
-	pa(&stack);
-	print_stack(&stack);
-	pa(&stack);
-	print_stack(&stack);
-	pb(&stack);
-	print_stack(&stack);
-	ra(&stack);
-	print_stack(&stack);
-	pb(&stack);
-	print_stack(&stack);
-	rb(&stack);
-	print_stack(&stack);
-	rr(&stack);
-	print_stack(&stack);
-	rrr(&stack);
-	print_stack(&stack);
+	if (info.flags & (BENCH | ADAPTIVE))
+		info.disorder = 100. - (_compute_disorder(&stack) * 100.);
+	// choose and run algorithm
 	list_clear(&stack.a);
 	list_clear(&stack.b);
 	return (0);
