@@ -26,7 +26,7 @@ typedef struct s_dprintf
 	int		current;
 }			t_dprintf;
 
-int		ft_dprintf(int fd, const char *s, ...) __attribute__((format(printf, 2, 3)));
+int		ft_dprintf(int fd, const char *s, ...);
 long	ft_atol(const char *s);
 bool	ft_isdigit(int c);
 bool	ft_isspace(int c);

@@ -22,31 +22,30 @@ int	main(int ac, char **av)
 	t_stack	stack;
 
 	parse(ac, av, &info, &stack);
-
+	print_stack(&stack); // to del
+	pa(&stack);
 	print_stack(&stack);
-    pa(&stack);
-    print_stack(&stack);
-    sa(&stack);
-    print_stack(&stack);
-    pa(&stack);
-    print_stack(&stack);
-    pa(&stack);
-    print_stack(&stack);
-    pa(&stack);
-    print_stack(&stack);
-    pb(&stack);
-    print_stack(&stack);
-    ra(&stack);
-    print_stack(&stack);
-    pb(&stack);
-    print_stack(&stack);
-    rb(&stack);
-    print_stack(&stack);
-    rr(&stack);
-    print_stack(&stack);
-    rrr(&stack);
-    print_stack(&stack);
-    list_clear(&stack.a);
-    list_clear(&stack.b);
-    return (0);
+	sa(&stack);
+	print_stack(&stack);
+	pa(&stack);
+	print_stack(&stack);
+	pa(&stack);
+	print_stack(&stack);
+	pa(&stack);
+	print_stack(&stack);
+	pb(&stack);
+	print_stack(&stack);
+	ra(&stack);
+	print_stack(&stack);
+	pb(&stack);
+	print_stack(&stack);
+	rb(&stack);
+	print_stack(&stack);
+	rr(&stack);
+	print_stack(&stack);
+	rrr(&stack);
+	print_stack(&stack);
+	list_clear(&stack.a);
+	list_clear(&stack.b);
+	return (0);
 }

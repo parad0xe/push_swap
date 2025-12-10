@@ -13,7 +13,7 @@
 #ifndef PARSER_H
 # define PARSER_H
 
-# define HASH_SIZE (0xFFFF + 1)
+# define HASH_SIZE 0x10000
 
 typedef enum e_errcode
 {
