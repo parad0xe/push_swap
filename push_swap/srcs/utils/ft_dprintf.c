@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_dprintf.h"
+#include "utils.h"
 
 static int	size_putstr(int fd, const char *s)
 {
@@ -98,7 +98,7 @@ static int	size_put_param(int fd, va_list pm, char c)
 	return (n);
 }
 
-int	ft_dprintf(int fd, const char *s, ...)
+extern int	ft_dprintf(int fd, const char *s, ...)
 {
 	t_dprintf	dprintf;
 
