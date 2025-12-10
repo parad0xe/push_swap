@@ -6,13 +6,13 @@
 /*   By: nlallema <nlallema@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 14:50:34 by nlallema          #+#    #+#             */
-/*   Updated: 2025/12/10 15:27:53 by nlallema         ###   ########lyon.fr   */
+/*   Updated: 2025/12/10 17:38:12 by nlallema         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "linked_list.h"
 
-void	list_clear(t_node **root)
+extern void	list_clear(t_node **root)
 {
 	t_node	*current;
 	t_node	*next;

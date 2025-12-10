@@ -6,13 +6,13 @@
 /*   By: nlallema <nlallema@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 19:23:46 by nlallema          #+#    #+#             */
-/*   Updated: 2025/12/10 16:37:02 by nlallema         ###   ########lyon.fr   */
+/*   Updated: 2025/12/10 17:24:55 by nlallema         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "operations.h"
 
-void	sa(t_stack *stack)
+extern void	sa(t_stack *stack)
 {
 	int		tmp;
 
@@ -25,7 +25,7 @@ void	sa(t_stack *stack)
 	}
 }
 
-void	sb(t_stack *stack)
+extern void	sb(t_stack *stack)
 {
 	int		tmp;
 
@@ -38,7 +38,7 @@ void	sb(t_stack *stack)
 	}
 }
 
-void	ss(t_stack *stack)
+extern void	ss(t_stack *stack)
 {
 	int	tmp;
 

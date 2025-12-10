@@ -6,13 +6,13 @@
 /*   By: nlallema <nlallema@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 14:29:41 by nlallema          #+#    #+#             */
-/*   Updated: 2025/12/10 15:41:52 by nlallema         ###   ########lyon.fr   */
+/*   Updated: 2025/12/10 17:38:31 by nlallema         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "linked_list.h"
 
-t_node	*node_new(int value)
+extern t_node	*node_new(int value)
 {
 	t_node	*node;
 

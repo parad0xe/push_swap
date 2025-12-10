@@ -6,13 +6,13 @@
 /*   By: nlallema <nlallema@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 19:46:09 by nlallema          #+#    #+#             */
-/*   Updated: 2025/12/10 16:36:45 by nlallema         ###   ########lyon.fr   */
+/*   Updated: 2025/12/10 17:47:07 by nlallema         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "operations.h"
 
-void	pa(t_stack *stack)
+extern void	pa(t_stack *stack)
 {
 	t_node	*node;
 
@@ -20,11 +20,11 @@ void	pa(t_stack *stack)
 	if (stack->b != NULL)
 	{
 		node = list_pop(&stack->b);
-		list_push_front(node, &stack->a);
+		list_push(node, &stack->a);
 	}
 }
 
-void	pb(t_stack *stack)
+extern void	pb(t_stack *stack)
 {
 	t_node	*node;
 
@@ -32,6 +32,6 @@ void	pb(t_stack *stack)
 	if (stack->a != NULL)
 	{
 		node = list_pop(&stack->a);
-		list_push_front(node, &stack->b);
+		list_push(node, &stack->b);
 	}
 }

@@ -6,13 +6,13 @@
 /*   By: nlallema <nlallema@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 14:50:03 by nlallema          #+#    #+#             */
-/*   Updated: 2025/12/10 16:45:28 by nlallema         ###   ########lyon.fr   */
+/*   Updated: 2025/12/10 17:38:59 by nlallema         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "linked_list.h"
 
-t_node	*list_pop(t_node **node)
+extern t_node	*list_pop(t_node **node)
 {
 	t_node	*current;
 
