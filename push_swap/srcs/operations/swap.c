@@ -6,7 +6,7 @@
 /*   By: nlallema <nlallema@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 19:23:46 by nlallema          #+#    #+#             */
-/*   Updated: 2025/12/10 17:24:55 by nlallema         ###   ########lyon.fr   */
+/*   Updated: 2025/12/10 18:14:48 by nlallema         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ extern void	sa(t_stack *stack)
 {
 	int		tmp;
 
-	ft_printf("sa\n");
+	ft_dprintf(stdout, "sa\n");
 	if (stack->a != NULL && stack->a != stack->a->next)
 	{
 		tmp = stack->a->value;
@@ -29,7 +29,7 @@ extern void	sb(t_stack *stack)
 {
 	int		tmp;
 
-	ft_printf("sb\n");
+	ft_dprintf(stdout, "sb\n");
 	if (stack->b != NULL && stack->b != stack->b->next)
 	{
 		tmp = stack->b->value;
@@ -42,7 +42,7 @@ extern void	ss(t_stack *stack)
 {
 	int	tmp;
 
-	ft_printf("ss\n");
+	ft_dprintf(stdout, "ss\n");
 	if (stack->a != NULL && stack->a != stack->a->next)
 	{
 		tmp = stack->a->value;

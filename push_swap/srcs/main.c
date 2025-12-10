@@ -1,29 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.h                                            :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldecavel <ldecavel@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/09/11 21:09:29 by ldecavel          #+#    #+#             */
-/*   Updated: 2025/12/10 18:10:53 by nlallema         ###   ########lyon.fr   */
+/*   Created: 2025/12/10 13:06:22 by ldecavel          #+#    #+#             */
+/*   Updated: 2025/12/10 13:06:26 by ldecavel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef UTILS_H
-# define UTILS_H
-
-# include <stdarg.h>
-# include <stdint.h>
-# include <unistd.h>
-
-typedef struct s_dprintf
+int	main(int ac, char **av)
 {
-	va_list	param;
-	int		n;
-	int		current;
-}			t_dprintf;
+	t_info	info;
+	t_stack	stack;
 
-int		ft_dprintf(const char *s, ...) __attribute__((format(printf, 1, 2)));
-
-#endif
+	parse(ac, av, &info, &stack);
+}

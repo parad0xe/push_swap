@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_dprintf.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldecavel <ldecavel@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/09 18:38:50 by ldecavel          #+#    #+#             */
-/*   Updated: 2025/12/10 14:09:48 by nlallema         ###   ########lyon.fr   */
+/*   Updated: 2025/12/10 18:12:28 by nlallema         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "utils.h"
+#include "ft_dprintf.h"
 
-static int	size_putstr(const char *s)
+static int	size_putstr(int fd, const char *s)
 {
 	int	size;
 
@@ -21,10 +21,10 @@ static int	size_putstr(const char *s)
 	size = -1;
 	while (s[++size])
 		;
-	return (write(1, s, size));
+	return (write(fd, s, size));
 }
 
-static int	size_putnbr(int64_t n)
+static int	size_putnbr(int fd, int64_t n)
 {
 	int		size;
 	char	c;
@@ -32,16 +32,16 @@ static int	size_putnbr(int64_t n)
 	size = 0;
 	if (n < 0)
 	{
-		size += write(1, "-", 1);
+		size += write(fd, "-", 1);
 		n = -n;
 	}
 	if (n > 9)
-		size += size_putnbr(n / 10);
+		size += size_putnbr(fd, n / 10);
 	c = n % 10 + '0';
-	return (size + write(1, &c, 1));
+	return (size + write(fd, &c, 1));
 }
 
-static int	size_puthex(uint64_t n, char a, char c)
+static int	size_puthex(int fd, uint64_t n, char a, char c)
 {
 	int		size;
 	char	b[16];
@@ -51,11 +51,11 @@ static int	size_puthex(uint64_t n, char a, char c)
 	size = 0;
 	i = 0;
 	if (n == 0 && c == 'p')
-		return (size_putstr("(nil)"));
+		return (size_putstr(fd, "(nil)"));
 	if (n == 0)
-		return (write(1, "0", 1));
+		return (write(fd, "0", 1));
 	if (c == 'p')
-		size += size_putstr("0x");
+		size += size_putstr(fd, "0x");
 	while (n)
 	{
 		res = (unsigned int)(n & 0xF);
@@ -66,11 +66,11 @@ static int	size_puthex(uint64_t n, char a, char c)
 		n >>= 4;
 	}
 	while (i--)
-		size += write(1, &b[i], 1);
+		size += write(fd, &b[i], 1);
 	return (size);
 }
 
-static int	size_put_param(va_list pm, char c)
+static int	size_put_param(int fd, va_list pm, char c)
 {
 	int	n;
 	int	tmp;
@@ -79,50 +79,50 @@ static int	size_put_param(va_list pm, char c)
 	if (c == 'c')
 	{
 		tmp = va_arg(pm, int);
-		n += write(1, &tmp, 1);
+		n += write(fd, &tmp, 1);
 	}
 	else if (c == 's')
-		n += size_putstr(va_arg(pm, const char *));
+		n += size_putstr(fd, va_arg(pm, const char *));
 	else if (c == 'p')
-		n += size_puthex((uint64_t)va_arg(pm, void *), 'a', c);
+		n += size_puthex(fd, (uint64_t)va_arg(pm, void *), 'a', c);
 	else if (c == 'd' || c == 'i')
-		n += size_putnbr((int)va_arg(pm, int));
+		n += size_putnbr(fd, (int)va_arg(pm, int));
 	else if (c == 'u')
-		n += size_putnbr((unsigned int)va_arg(pm, unsigned int));
+		n += size_putnbr(fd, (unsigned int)va_arg(pm, unsigned int));
 	else if (c == 'x')
-		n += size_puthex((uint64_t)va_arg(pm, unsigned int), 'a', c);
+		n += size_puthex(fd, (uint64_t)va_arg(pm, unsigned int), 'a', c);
 	else if (c == 'X')
-		n += size_puthex((uint64_t)va_arg(pm, unsigned int), 'A', c);
+		n += size_puthex(fd, (uint64_t)va_arg(pm, unsigned int), 'A', c);
 	else if (c == '%')
-		n += write(1, "%", 1);
+		n += write(fd, "%", 1);
 	return (n);
 }
 
-int	ft_printf(const char *s, ...)
+int	ft_dprintf(int fd, const char *s, ...)
 {
-	t_printf	printf;
+	t_dprintf	dprintf;
 
-	printf = (t_printf){0};
-	va_start(printf.param, s);
+	dprintf = (t_dprintf){0};
+	va_start(dprintf.param, s);
 	while (*s)
 	{
 		if (*s == '%')
 		{
 			s++;
-			printf.current = size_put_param(printf.param, *s);
+			dprintf.current = size_put_param(fd, dprintf.param, *s);
 		}
 		else
-			printf.current = write(1, s, 1);
+			dprintf.current = write(fd, s, 1);
 		if (*s)
 			s++;
-		if (printf.current > -1)
-			printf.n += printf.current;
+		if (dprintf.current > -1)
+			dprintf.n += dprintf.current;
 		else
 		{
-			printf.n = -1;
+			dprintf.n = -1;
 			break ;
 		}
 	}
-	va_end(printf.param);
-	return (printf.n);
+	va_end(dprintf.param);
+	return (dprintf.n);
 }

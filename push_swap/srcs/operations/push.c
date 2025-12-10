@@ -6,7 +6,7 @@
 /*   By: nlallema <nlallema@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 19:46:09 by nlallema          #+#    #+#             */
-/*   Updated: 2025/12/10 17:47:07 by nlallema         ###   ########lyon.fr   */
+/*   Updated: 2025/12/10 18:13:40 by nlallema         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ extern void	pa(t_stack *stack)
 {
 	t_node	*node;
 
-	ft_printf("pa\n");
+	ft_dprintf(stdout, "pa\n");
 	if (stack->b != NULL)
 	{
 		node = list_pop(&stack->b);
@@ -28,7 +28,7 @@ extern void	pb(t_stack *stack)
 {
 	t_node	*node;
 
-	ft_printf("pb\n");
+	ft_dprintf(stdout, "pb\n");
 	if (stack->a != NULL)
 	{
 		node = list_pop(&stack->a);
