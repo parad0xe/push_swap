@@ -6,11 +6,11 @@
 /*   By: ldecavel <ldecavel@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/09 18:38:50 by ldecavel          #+#    #+#             */
-/*   Updated: 2025/11/10 17:12:25 by ldecavel         ###   ########lyon.fr   */
+/*   Updated: 2025/12/10 14:09:48 by nlallema         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "utils.h"
 
 static int	size_putstr(const char *s)
 {
@@ -103,26 +103,26 @@ int	ft_printf(const char *s, ...)
 	t_printf	printf;
 
 	printf = (t_printf){0};
-	va_start(print.param, s);
+	va_start(printf.param, s);
 	while (*s)
 	{
 		if (*s == '%')
 		{
 			s++;
-			print.current = size_put_param(print.param, *s);
+			printf.current = size_put_param(printf.param, *s);
 		}
 		else
-			print.current = write(1, s, 1);
+			printf.current = write(1, s, 1);
 		if (*s)
 			s++;
-		if (print.current > -1)
-			printf.n += print.current;
+		if (printf.current > -1)
+			printf.n += printf.current;
 		else
 		{
 			printf.n = -1;
 			break ;
 		}
 	}
-	va_end(print.param);
+	va_end(printf.param);
 	return (printf.n);
 }

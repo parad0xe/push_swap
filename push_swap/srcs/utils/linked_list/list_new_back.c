@@ -1,37 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.c                                             :+:      :+:    :+:   */
+/*   list_new_back.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nlallema <nlallema@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/09 19:46:09 by nlallema          #+#    #+#             */
-/*   Updated: 2025/12/10 16:36:45 by nlallema         ###   ########lyon.fr   */
+/*   Created: 2025/12/10 14:49:39 by nlallema          #+#    #+#             */
+/*   Updated: 2025/12/10 15:05:16 by nlallema         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "operations.h"
+#include "linked_list.h"
 
-void	pa(t_stack *stack)
+short	list_new_back(int value, t_node **root)
 {
 	t_node	*node;
 
-	ft_printf("pa\n");
-	if (stack->b != NULL)
+	if (root)
 	{
-		node = list_pop(&stack->b);
-		list_push_front(node, &stack->a);
+		node = node_new(value);
+		if (node == NULL)
+			return (0);
+		list_push_back(node, root);
 	}
-}
-
-void	pb(t_stack *stack)
-{
-	t_node	*node;
-
-	ft_printf("pb\n");
-	if (stack->a != NULL)
-	{
-		node = list_pop(&stack->a);
-		list_push_front(node, &stack->b);
-	}
+	return (1);
 }

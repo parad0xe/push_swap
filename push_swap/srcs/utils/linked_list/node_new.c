@@ -1,37 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.c                                             :+:      :+:    :+:   */
+/*   node_new.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nlallema <nlallema@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/09 19:46:09 by nlallema          #+#    #+#             */
-/*   Updated: 2025/12/10 16:36:45 by nlallema         ###   ########lyon.fr   */
+/*   Created: 2025/12/10 14:29:41 by nlallema          #+#    #+#             */
+/*   Updated: 2025/12/10 15:41:52 by nlallema         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "operations.h"
+#include "linked_list.h"
 
-void	pa(t_stack *stack)
+t_node	*node_new(int value)
 {
 	t_node	*node;
 
-	ft_printf("pa\n");
-	if (stack->b != NULL)
-	{
-		node = list_pop(&stack->b);
-		list_push_front(node, &stack->a);
-	}
+	node = malloc(sizeof(t_node));
+	if (!node)
+		return (NULL);
+	node->value = value;
+	node->previous = node;
+	node->next = node;
+	return (node);
 }
 
-void	pb(t_stack *stack)
-{
-	t_node	*node;
-
-	ft_printf("pb\n");
-	if (stack->a != NULL)
-	{
-		node = list_pop(&stack->a);
-		list_push_front(node, &stack->b);
-	}
-}

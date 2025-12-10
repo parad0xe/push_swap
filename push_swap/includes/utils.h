@@ -6,7 +6,7 @@
 /*   By: ldecavel <ldecavel@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 18:28:01 by nlallema          #+#    #+#             */
-/*   Updated: 2025/12/10 10:50:55 by nlallema         ###   ########lyon.fr   */
+/*   Updated: 2025/12/10 14:09:33 by nlallema         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdarg.h>
 # include <stdint.h>
 # include <unistd.h>
+# include "push_swap.h"
 
 typedef struct s_printf
 {

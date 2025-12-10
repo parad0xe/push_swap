@@ -6,32 +6,42 @@
 /*   By: nlallema <nlallema@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 17:57:23 by nlallema          #+#    #+#             */
-/*   Updated: 2025/12/10 10:52:16 by nlallema         ###   ########lyon.fr   */
+/*   Updated: 2025/12/10 16:23:59 by nlallema         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include "utils.h"
+#include <stdio.h>
 
 void	print_stack(t_stack *stack)
 {
-	int	i;
+	t_node	*a_current;
+	t_node	*b_current;
+	int		i;
 
 	i = -1;
-	ft_printf("+-----------------------+\n");
-	ft_printf("|      a    |     b     |\n");
-	ft_printf("+-----------------------+\n");
-	while (++i < stack->capacity)
+	a_current = stack->a;
+	b_current = stack->b;
+	printf("+-----------------------+\n");
+	printf("|      a    |     b     |\n");
+	printf("+-----------------------+\n");
+	while (++i < stack->size)
 	{
-		if (i < stack->size_a)
-			ft_printf("|%11d|", stack->a[i]);
+		if (a_current && (a_current != stack->a || i == 0))
+		{
+			printf("|%11d|", a_current->value);
+			a_current = a_current->next;
+		}
 		else
-			ft_printf("|%11s|", " ");
-		if (i < stack->size_b)
-			ft_printf("%11d|", stack->b[i]);
+			printf("|%11s|", " ");
+		if (b_current && (b_current != stack->b || i == 0))
+		{
+			printf("%11d|", b_current->value);
+			b_current = b_current->next;
+		}
 		else
-			ft_printf("%11s|", " ");
-		ft_printf("\n");
+			printf("%11s|", " ");
+		printf("\n");
 	}
-	ft_printf("+-----------------------+\n");
+	printf("+-----------------------+\n");
 }

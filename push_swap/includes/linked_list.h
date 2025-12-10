@@ -6,7 +6,7 @@
 /*   By: ldecavel <ldecavel@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 11:07:54 by ldecavel          #+#    #+#             */
-/*   Updated: 2025/12/10 12:12:05 by nlallema         ###   ########lyon.fr   */
+/*   Updated: 2025/12/10 15:10:02 by nlallema         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,20 @@
 
 typedef struct s_node
 {
-	t_node	*previous;
-	t_node	*next;
-	int		value;
+	struct s_node	*previous;
+	struct s_node	*next;
+	int				value;
 }			t_node;
 
 t_node	*node_new(int value);
-short	list_front(int value, t_node **root);
-short	list_back(int value, t_node **root);
+t_node	*list_pop(t_node **node);
+
+void	list_push_back(t_node *node, t_node **root);
+short	list_new_back(int value, t_node **root);
+
+void	list_push_front(t_node *node, t_node **root);
+short	list_new_front(int value, t_node **root);
+
 void	list_clear(t_node **root);
 
 #endif

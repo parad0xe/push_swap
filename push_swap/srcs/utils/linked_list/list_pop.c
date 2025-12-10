@@ -1,37 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.c                                             :+:      :+:    :+:   */
+/*   list_pop.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nlallema <nlallema@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/09 19:46:09 by nlallema          #+#    #+#             */
-/*   Updated: 2025/12/10 16:36:45 by nlallema         ###   ########lyon.fr   */
+/*   Created: 2025/12/10 14:50:03 by nlallema          #+#    #+#             */
+/*   Updated: 2025/12/10 16:45:28 by nlallema         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "operations.h"
+#include "linked_list.h"
 
-void	pa(t_stack *stack)
+t_node	*list_pop(t_node **node)
 {
-	t_node	*node;
+	t_node	*current;
 
-	ft_printf("pa\n");
-	if (stack->b != NULL)
-	{
-		node = list_pop(&stack->b);
-		list_push_front(node, &stack->a);
-	}
-}
-
-void	pb(t_stack *stack)
-{
-	t_node	*node;
-
-	ft_printf("pb\n");
-	if (stack->a != NULL)
-	{
-		node = list_pop(&stack->a);
-		list_push_front(node, &stack->b);
-	}
+	if (!node || *node == NULL)
+		return (NULL);
+	current = *node;
+	(*node)->next->previous = (*node)->previous;
+	(*node)->previous->next = (*node)->next;
+	if ((*node)->next == *node)
+		*node = NULL;
+	else
+		*node = (*node)->next;
+	current->previous = current;
+	current->next = current;
+	return (current);
 }

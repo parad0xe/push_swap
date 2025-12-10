@@ -1,37 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.c                                             :+:      :+:    :+:   */
+/*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nlallema <nlallema@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/09 19:46:09 by nlallema          #+#    #+#             */
-/*   Updated: 2025/12/10 16:36:45 by nlallema         ###   ########lyon.fr   */
+/*   Created: 2025/12/10 16:31:30 by nlallema          #+#    #+#             */
+/*   Updated: 2025/12/10 17:05:32 by nlallema         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "operations.h"
 
-void	pa(t_stack *stack)
+void	ra(t_stack *stack)
 {
-	t_node	*node;
-
-	ft_printf("pa\n");
-	if (stack->b != NULL)
-	{
-		node = list_pop(&stack->b);
-		list_push_front(node, &stack->a);
-	}
+	ft_printf("ra\n");
+	if (stack->a != NULL)
+		stack->a = stack->a->next;
 }
 
-void	pb(t_stack *stack)
+void	rb(t_stack *stack)
 {
-	t_node	*node;
+	ft_printf("rb\n");
+	if (stack->b != NULL)
+		stack->b = stack->b->next;
+}
 
-	ft_printf("pb\n");
+void	rr(t_stack *stack)
+{
+	ft_printf("rr\n");
 	if (stack->a != NULL)
-	{
-		node = list_pop(&stack->a);
-		list_push_front(node, &stack->b);
-	}
+		stack->a = stack->a->next;
+	if (stack->b != NULL)
+		stack->b = stack->b->next;
 }
