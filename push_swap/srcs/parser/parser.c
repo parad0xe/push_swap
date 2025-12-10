@@ -14,11 +14,6 @@
 #include "parser.h"
 #include "utils.h"
 #include "linked_list.h"
-//include avec ft_strcmp
-//include avec ft_isspace
-//include avec ft_isdigit
-//include avec ft_atol
-//include avec ft_dprintf
 
 static void	handle_error(int errcode, t_stack *stack, t_node **table)
 {
