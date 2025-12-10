@@ -27,7 +27,7 @@ SRCS =\
    srcs/utils/linked_list/list_push.c\
    srcs/utils/linked_list/list_push_new.c\
    srcs/utils/linked_list/node_new.c\
-   debug.c
+   srcs/debug.c
 
 BSRCS = main.c\
 
