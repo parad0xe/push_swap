@@ -1,7 +1,7 @@
-/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
+/* ************************************************************************** */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldecavel <ldecavel@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -13,12 +13,14 @@
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
+# include "linked_list.h"
+
 typedef enum e_flag
 {
 	SIMPLE = 1 << 0,
 	MEDIUM = 1 << 1,
 	COMPLEX = 1 << 2,
-	ADAPTATIVE = 1 << 3,
+	ADAPTIVE = 1 << 3,
 	BENCH = 1 << 4,
 }	t_flag;
 
@@ -39,11 +41,9 @@ typedef enum e_operation
 
 typedef struct s_stack
 {
-	int	*a;
-	int	*b;
-	int	capacity;
-	int	size_a;
-	int	size_b;
+	t_node	*a;
+	t_node	*b;
+	int		size;
 }		t_stack;
 
 typedef struct s_info
