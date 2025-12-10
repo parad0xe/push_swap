@@ -6,7 +6,7 @@
 /*   By: nlallema <nlallema@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 14:29:41 by nlallema          #+#    #+#             */
-/*   Updated: 2025/12/10 17:38:31 by nlallema         ###   ########lyon.fr   */
+/*   Updated: 2025/12/10 18:26:17 by nlallema         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,4 +24,3 @@ extern t_node	*node_new(int value)
 	node->next = node;
 	return (node);
 }
-
