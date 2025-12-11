@@ -6,7 +6,7 @@
 /*   By: nlallema <nlallema@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 11:34:04 by nlallema          #+#    #+#             */
-/*   Updated: 2025/12/11 11:54:21 by nlallema         ###   ########lyon.fr   */
+/*   Updated: 2025/12/11 12:11:16 by nlallema         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,12 +43,25 @@ static void	_print_strategy(t_info info)
 	ft_dprintf(2, "\n");
 }
 
-extern void	bench(t_stack stack, t_info info)
+static void	_print_operation_count(t_info info)
 {
-	(void)stack;
+	ft_dprintf(2, "[bench] total_ops: %d\n", info.total_count);
+	ft_dprintf(2, "[bench] sa: %d ", info.operation_count[SA]);
+	ft_dprintf(2, "sb: %d ", info.operation_count[SB]);
+	ft_dprintf(2, "ss: %d ", info.operation_count[SS]);
+	ft_dprintf(2, "pa: %d ", info.operation_count[PA]);
+	ft_dprintf(2, "pb: %d\n", info.operation_count[PB]);
+	ft_dprintf(2, "[bench] ra: %d ", info.operation_count[RA]);
+	ft_dprintf(2, "rb: %d ", info.operation_count[RB]);
+	ft_dprintf(2, "rr: %d ", info.operation_count[RR]);
+	ft_dprintf(2, "rra: %d ", info.operation_count[RRA]);
+	ft_dprintf(2, "rrb: %d ", info.operation_count[RRB]);
+	ft_dprintf(2, "rrr: %d\n", info.operation_count[RRR]);
+}
+
+extern void	bench(t_info info)
+{
 	_print_disorder(info);
 	_print_strategy(info);
-	ft_dprintf(2, "[bench] total_ops: == ?? ==\n");
-	ft_dprintf(2, "[bench] == list op counter part 1 ==\n");
-	ft_dprintf(2, "[bench] == list op counter part 2 ==\n");
+	_print_operation_count(info);
 }
