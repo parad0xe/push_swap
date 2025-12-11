@@ -17,7 +17,7 @@ static void	print_disorder(t_info info)
 	double	disorder;
 	int		decimal;
 
-	disorder = 100. - (info.disorder * 100.);
+	disorder = info.disorder * 100.;
 	decimal = (int)((disorder - (int)disorder) * 100);
 	ft_dprintf(2, "[bench] disorder: %d.", (int)disorder);
 	if (decimal < 10)
