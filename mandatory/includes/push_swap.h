@@ -6,7 +6,7 @@
 /*   By: ldecavel <ldecavel@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 16:44:16 by ldecavel          #+#    #+#             */
-/*   Updated: 2025/12/10 18:25:47 by nlallema         ###   ########lyon.fr   */
+/*   Updated: 2025/12/11 16:41:39 by nlallema         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,8 @@ typedef struct s_stack
 	t_node	*a;
 	t_node	*b;
 	int		size;
+	int		size_a;
+	int		size_b;
 }		t_stack;
 
 typedef struct s_info

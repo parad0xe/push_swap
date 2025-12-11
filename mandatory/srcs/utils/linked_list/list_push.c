@@ -6,7 +6,7 @@
 /*   By: nlallema <nlallema@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 14:47:53 by nlallema          #+#    #+#             */
-/*   Updated: 2025/12/11 14:10:18 by nlallema         ###   ########lyon.fr   */
+/*   Updated: 2025/12/11 16:44:10 by nlallema         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ extern void	list_push_back(t_node *node, t_node **root)
 		node->next = *root;
 	}
 	return ;
-
 }
 
 extern short	list_push_back_new(int value, t_node **root)

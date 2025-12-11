@@ -6,7 +6,7 @@
 /*   By: nlallema <nlallema@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 19:26:10 by nlallema          #+#    #+#             */
-/*   Updated: 2025/12/10 16:49:08 by nlallema         ###   ########lyon.fr   */
+/*   Updated: 2025/12/11 16:44:50 by nlallema         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,19 +18,19 @@
 # include "utils.h"
 # include "linked_list.h"
 
-void	sa(t_stack *stack);
-void	sb(t_stack *stack);
-void	ss(t_stack *stack);
+void	sa(t_stack *stack, t_info *info);
+void	sb(t_stack *stack, t_info *info);
+void	ss(t_stack *stack, t_info *info);
 
-void	pa(t_stack *stack);
-void	pb(t_stack *stack);
+void	pa(t_stack *stack, t_info *info);
+void	pb(t_stack *stack, t_info *info);
 
-void	ra(t_stack *stack);
-void	rb(t_stack *stack);
-void	rr(t_stack *stack);
+void	ra(t_stack *stack, t_info *info);
+void	rb(t_stack *stack, t_info *info);
+void	rr(t_stack *stack, t_info *info);
 
-void	rra(t_stack *stack);
-void	rrb(t_stack *stack);
-void	rrr(t_stack *stack);
+void	rra(t_stack *stack, t_info *info);
+void	rrb(t_stack *stack, t_info *info);
+void	rrr(t_stack *stack, t_info *info);
 
 #endif
