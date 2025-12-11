@@ -19,6 +19,16 @@
 #include "operations.h" // to remove
 #include "debug.h" // to remove
 
+static void	adapt_complexity(t_info *info)
+{
+	if (info->disorder < 0.2)
+		info->flags |= SIMPLE;
+	else if (info->disorder < 0.5)
+		info->flags |= MEDIUM;
+	else
+		info->flags |= COMPLEX;
+}
+
 static double	_compute_disorder(t_stack *stack)
 {
 	double	mistakes;
@@ -56,9 +66,12 @@ int	main(int ac, char **av)
 	parse(ac, av, &info, &stack);
 	if (info.flags & (BENCH | ADAPTIVE))
 		info.disorder = _compute_disorder(&stack);
+	if (info.flags & ADAPTIVE)
+		adapt_complexity(&info);
 	// choose and run algorithm
 	if (info.flags & BENCH)
 		bench(info);
+	print_stack(&stack);
 	list_clear(&stack.a);
 	list_clear(&stack.b);
 	return (0);
