@@ -6,7 +6,7 @@
 /*   By: ldecavel <ldecavel@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 10:11:51 by ldecavel          #+#    #+#             */
-/*   Updated: 2025/12/10 13:09:52 by ldecavel         ###   ########.fr       */
+/*   Updated: 2025/12/11 16:43:32 by nlallema         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,4 +119,5 @@ extern void	parse(size_t ac, char **av, t_info *info, t_stack *stack)
 	i = -1;
 	while (++i < HASH_SIZE)
 		list_clear(&table[i]);
+	stack->size_a = stack->size;
 }
