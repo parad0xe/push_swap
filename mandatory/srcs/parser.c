@@ -45,7 +45,7 @@ static int	has_duplicata(int value, t_node **table)
 		if (current == table[index])
 			break ;
 	}
-	if (!list_push_new(value, &table[index]))
+	if (!list_push_back_new(value, &table[index]))
 		return (ERR_ALLOC);
 	return (NOERR);
 }
@@ -70,7 +70,7 @@ static void	parse_stack(char *s, t_stack *stack, t_node **table)
 			i++;
 		if (value < INT_MIN || value > INT_MAX)
 			handle_error(ERR_NOT_INT, stack, table);
-		if (!list_push_new(value, &stack->a))
+		if (!list_push_back_new(value, &stack->a))
 			handle_error(ERR_ALLOC, stack, table);
 		errcode = has_duplicata(value, table);
 		if (errcode != NOERR)
