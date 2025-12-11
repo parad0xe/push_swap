@@ -6,7 +6,7 @@
 /*   By: nlallema <nlallema@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 19:46:09 by nlallema          #+#    #+#             */
-/*   Updated: 2025/12/10 18:13:40 by nlallema         ###   ########lyon.fr   */
+/*   Updated: 2025/12/11 14:10:55 by nlallema         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ extern void	pa(t_stack *stack)
 	if (stack->b != NULL)
 	{
 		node = list_pop(&stack->b);
-		list_push(node, &stack->a);
+		list_push_front(node, &stack->a);
 	}
 }
 
@@ -32,6 +32,6 @@ extern void	pb(t_stack *stack)
 	if (stack->a != NULL)
 	{
 		node = list_pop(&stack->a);
-		list_push(node, &stack->b);
+		list_push_front(node, &stack->b);
 	}
 }
