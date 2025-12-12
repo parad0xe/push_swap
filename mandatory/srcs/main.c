@@ -15,8 +15,8 @@
 
 #include "utils.h"
 #include "bench.h"
+#include "algorithms.h"
 
-#include "operations.h" // to remove
 #include "debug.h" // to remove
 
 static void	adapt_complexity(t_info *info)
@@ -68,6 +68,12 @@ int	main(int ac, char **av)
 		info.disorder = compute_disorder(&stack);
 	if (info.flags & ADAPTIVE)
 		adapt_complexity(&info);
+	if (info.flags & SIMPLE)
+		simple(&stack, &info);
+	else if (info.flags & MEDIUM)
+		medium(&stack, &info);
+	else if (info.flags & COMPLEX)
+		complex(&stack, &info);
 	if (info.flags & BENCH)
 		bench(info);
 	list_clear(&stack.a);

@@ -18,6 +18,9 @@ MANDATORY_SRCS =\
 		   main.c\
 		   bench.c\
 		   debug.c\
+		   algorithms/simple.c\
+		   algorithms/medium.c\
+		   algorithms/complex.c\
 
 BONUS_SRCS =\
 		main.c\
