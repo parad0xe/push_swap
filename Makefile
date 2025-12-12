@@ -1,67 +1,87 @@
 # structure
 NAME = push_swap
-BNAME = checker
+BONUS_NAME = checker
+
+MANDATORY_DIR = mandatory
+BONUS_DIR = bonus
+CORE_DIR = core
+
 BUILD = build
 
 # flags
 CC = cc
-CFLAGS = -MMD -MP -Wall -Wextra -Werror -I $(INCDIR) -g3
+CFLAGS = -MMD -MP -Wall -Wextra -Werror $(INCLUDES) $(DEFINES)
 MAKEFLAGS += -j $$(nproc)
 
 # files
-SRCS =\
-   srcs/main.c\
-   srcs/bench.c\
-   srcs/parser.c\
-   srcs/operations/push.c\
-   srcs/operations/reverse_rotate.c\
-   srcs/operations/rotate.c\
-   srcs/operations/swap.c\
-   srcs/utils/libft/ft_atol.c\
-   srcs/utils/libft/ft_dprintf.c\
-   srcs/utils/libft/ft_isdigit.c\
-   srcs/utils/libft/ft_issign.c\
-   srcs/utils/libft/ft_isspace.c\
-   srcs/utils/libft/ft_memset.c\
-   srcs/utils/libft/ft_strcmp.c\
-   srcs/utils/linked_list/list_clear.c\
-   srcs/utils/linked_list/list_pop.c\
-   srcs/utils/linked_list/list_push.c\
-   srcs/debug.c
+MANDATORY_SRCS =\
+		   main.c\
+		   bench.c\
+		   debug.c\
 
-BSRCS = main.c\
+BONUS_SRCS =\
+		main.c\
 
-OBJS = $(SRCS:%.c=$(BUILD)/%.o)
+CORE_SRCS =\
+	   operations/push.c\
+	   operations/reverse_rotate.c\
+	   operations/rotate.c\
+	   operations/swap.c\
+	   utils/libft/ft_atol.c\
+	   utils/libft/ft_dprintf.c\
+	   utils/libft/ft_isdigit.c\
+	   utils/libft/ft_issign.c\
+	   utils/libft/ft_isspace.c\
+	   utils/libft/ft_memset.c\
+	   utils/libft/ft_strcmp.c\
+	   utils/linked_list/list_clear.c\
+	   utils/linked_list/list_pop.c\
+	   utils/linked_list/list_push.c\
+	   parser.c\
+
+OBJS = $(MANDATORY_SRCS:%.c=$(BUILD)/%.o)
 DEPS = $(OBJS:.o=.d)
 
-VARS = INCDIR="mandatory/includes" SRCS="$(addprefix mandatory/, $(SRCS))" NAME="$(NAME)"
-BVARS = INCDIR="bonus/includes" SRCS="$(addprefix bonus/, $(BSRCS))" NAME="$(BNAME)"
+VARS = INCLUDES="-I$(MANDATORY_DIR)/includes -I$(CORE_DIR)/includes"\
+	   MANDATORY_SRCS="$(addprefix $(MANDATORY_DIR)/srcs/, $(MANDATORY_SRCS)) \
+	   $(addprefix $(CORE_DIR)/srcs/, $(CORE_SRCS))"\
+	   DEFINES="-DPARSE_STRATEGY=true"\
+	   NAME="$(NAME)"\
+
+BONUS_VARS = INCLUDES=-I$(BONUS_DIR)/includes -I$(CORE_DIR)/includes\
+		MANDATORY_SRCS="$(addprefix $(BONUS_DIR)/srcs/, $(BONUS_SRCS)) \
+		$(addprefix $(CORE_DIR)/srcs/, $(CORE_SRCS))"\
+		DEFINES="-DPARSE_STRATEGY=false"\
+		NAME="$(BONUS_NAME)"\
 
 # rules
-all $(NAME):
-	@mkdir -p $(BUILD)/$(NAME)
-	@$(MAKE) $(VARS) build --no-print-directory
+ifeq ($(MAKELEVEL),0)
 
-bonus $(BNAME):
-	@mkdir -p $(BUILD)/$(BNAME)
-	@$(MAKE) $(BVARS) build --no-print-directory
+all $(NAME) &:
+	@$(MAKE) $(VARS) $(NAME) --no-print-directory
 
-build: $(OBJS)
+bonus $(BONUS_NAME) &:
+	@$(MAKE) $(BONUS_VARS) $(NAME) --no-print-directory
+
+clean:
+	rm -rf $(BUILD)
+
+fclean: clean
+	rm -f $(NAME) $(BONUS_NAME)
+
+re: fclean all
+
+else
+
+$(NAME): $(OBJS)
 	$(CC) -o $(NAME) $(OBJS)
 
 $(BUILD)/%.o: %.c
 	mkdir -p $(dir $@)
 	$(CC) $(CFLAGS) -c $< -o $@
 
-clean:
-	rm -rf $(BUILD)
-
-fclean: clean
-	rm -f $(NAME) $(BNAME)
-
-re: fclean
-	@$(MAKE) all --no-print-directory
+endif
 
 # miscellaneous
-.PHONY: all bonus build clean fclean re
+.PHONY: all bonus clean fclean re
 -include $(DEPS)
