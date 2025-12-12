@@ -58,6 +58,7 @@ extern void	parse_stdin(t_node **instructions, t_stack *stack)
 	char	buffer[BUFFER_SIZE];
 	int		operation;
 
+	operation = 0;
 	while (true)
 	{
 		nread = read(0, buffer, BUFFER_SIZE);

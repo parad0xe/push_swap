@@ -10,7 +10,7 @@ BUILD = build
 
 # flags
 CC = cc
-CFLAGS = -MMD -MP -Wall -Wextra -Werror $(INCLUDES) $(DEFINES)
+CFLAGS = -MMD -MP -Wall -Wextra -Werror $(INCLUDES) $(DEFINES) -g3 # to remove
 MAKEFLAGS += -j $$(nproc)
 
 # files

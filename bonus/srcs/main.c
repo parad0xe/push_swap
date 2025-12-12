@@ -64,6 +64,9 @@ int	main(int ac, char **av)
 	t_node	*instructions;
 	int		return_value;
 
+	info = (t_info){0};
+	stack = (t_stack){0};
+	instructions = 0;
 	parse_input(ac, av, &info, &stack);
 	parse_stdin(&instructions, &stack);
 	run_instructions(&stack, &info, instructions);
