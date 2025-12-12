@@ -31,7 +31,6 @@ typedef enum e_operation
 	RRA,
 	RRB,
 	RRR,
-	NOP,
 }	t_operation;
 
 void	sa(t_stack *stack, t_info *info);

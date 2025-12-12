@@ -49,7 +49,7 @@ static int	get_instruction(char buffer[BUFFER_SIZE])
 	else if (!ft_strcmp("rrr\n", buffer))
 		return (RRR);
 	else
-		return (NOP);
+		return (-1);
 }
 
 extern void	parse_stdin(t_node **instructions, t_stack *stack)
@@ -68,7 +68,7 @@ extern void	parse_stdin(t_node **instructions, t_stack *stack)
 			buffer[nread++] = 0;
 		buffer[nread] = 0;
 		operation = get_instruction(buffer);
-		if (operation == NOP)
+		if (operation == -1)
 			handle_error(ERR_INSTRUCTION, stack, instructions);
 		if (!list_push_back_new(operation, instructions))
 			handle_error(ERR_ALLOC, stack, instructions);
