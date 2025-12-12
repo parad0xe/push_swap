@@ -45,6 +45,7 @@ static void	print_strategy(t_info info)
 
 static void	print_operation_count(t_info info)
 {
+	//misses total_count {IMPORTANT} care because 0 now is noop so skip 0
 	ft_dprintf(2, "[bench] total_ops: %d\n", info.total_count);
 	ft_dprintf(2, "[bench] sa: %d ", info.operation_count[SA]);
 	ft_dprintf(2, "sb: %d ", info.operation_count[SB]);

@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include "parser.h"
+#include "parse_input.h"
 #include "utils.h"
 #include "linked_list.h"
 #include <limits.h>

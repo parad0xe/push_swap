@@ -14,6 +14,7 @@
 # define BENCH_H
 
 # include "push_swap.h"
+# include "operations.h"
 # include "utils.h"
 
 void	bench(t_info info);

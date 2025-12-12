@@ -35,7 +35,7 @@ typedef struct s_stack
 
 typedef struct s_info
 {
-	int		operation_count[11];
+	int		operation_count[12];
 	double	disorder;
 	int		total_count;
 	short	flags;
