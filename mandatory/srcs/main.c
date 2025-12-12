@@ -68,10 +68,8 @@ int	main(int ac, char **av)
 		info.disorder = compute_disorder(&stack);
 	if (info.flags & ADAPTIVE)
 		adapt_complexity(&info);
-	// choose and run algorithm
 	if (info.flags & BENCH)
 		bench(info);
-	print_stack(&stack);
 	list_clear(&stack.a);
 	list_clear(&stack.b);
 	return (0);

@@ -17,7 +17,8 @@ extern void	pa(t_stack *stack, t_info *info)
 	t_node	*node;
 
 	info->operation_count[PA]++;
-	ft_dprintf(STDOUT_FILENO, "pa\n");
+	if (PRINT_OPERATION == true)
+		ft_dprintf(STDOUT_FILENO, "pa\n");
 	if (stack->b != NULL)
 	{
 		node = list_pop(&stack->b);
@@ -32,7 +33,8 @@ extern void	pb(t_stack *stack, t_info *info)
 	t_node	*node;
 
 	info->operation_count[PB]++;
-	ft_dprintf(STDOUT_FILENO, "pb\n");
+	if (PRINT_OPERATION == true)
+		ft_dprintf(STDOUT_FILENO, "pb\n");
 	if (stack->a != NULL)
 	{
 		node = list_pop(&stack->a);

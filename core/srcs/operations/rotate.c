@@ -15,7 +15,8 @@
 extern void	ra(t_stack *stack, t_info *info)
 {
 	info->operation_count[RA]++;
-	ft_dprintf(STDOUT_FILENO, "ra\n");
+	if (PRINT_OPERATION == true)
+		ft_dprintf(STDOUT_FILENO, "ra\n");
 	if (stack->a != NULL)
 		stack->a = stack->a->next;
 }
@@ -23,7 +24,8 @@ extern void	ra(t_stack *stack, t_info *info)
 extern void	rb(t_stack *stack, t_info *info)
 {
 	info->operation_count[RB]++;
-	ft_dprintf(STDOUT_FILENO, "rb\n");
+	if (PRINT_OPERATION == true)
+		ft_dprintf(STDOUT_FILENO, "rb\n");
 	if (stack->b != NULL)
 		stack->b = stack->b->next;
 }
@@ -31,7 +33,8 @@ extern void	rb(t_stack *stack, t_info *info)
 extern void	rr(t_stack *stack, t_info *info)
 {
 	info->operation_count[RR]++;
-	ft_dprintf(STDOUT_FILENO, "rr\n");
+	if (PRINT_OPERATION == true)
+		ft_dprintf(STDOUT_FILENO, "rr\n");
 	if (stack->a != NULL)
 		stack->a = stack->a->next;
 	if (stack->b != NULL)

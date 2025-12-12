@@ -10,7 +10,7 @@ BUILD = build
 
 # flags
 CC = cc
-CFLAGS = -MMD -MP -Wall -Wextra -Werror $(INCLUDES) $(DEFINES) -g3 # to remove
+CFLAGS = -MMD -MP -Wall -Wextra -Werror $(INCLUDES) $(DEFINES)
 MAKEFLAGS += -j $$(nproc)
 
 # files
@@ -46,13 +46,13 @@ DEPS = $(OBJS:.o=.d)
 VARS = INCLUDES="-I$(MANDATORY_DIR)/includes -I$(CORE_DIR)/includes"\
 	   MANDATORY_SRCS="$(addprefix $(MANDATORY_DIR)/srcs/, $(MANDATORY_SRCS)) \
 	   $(addprefix $(CORE_DIR)/srcs/, $(CORE_SRCS))"\
-	   DEFINES="-DPARSE_STRATEGY=true"\
+	   DEFINES="-DPARSE_STRATEGY=true -DPRINT_OPERATION=true"\
 	   NAME="$(NAME)"\
 
 BONUS_VARS = INCLUDES="-I$(BONUS_DIR)/includes -I$(CORE_DIR)/includes"\
 		MANDATORY_SRCS="$(addprefix $(BONUS_DIR)/srcs/, $(BONUS_SRCS)) \
 		$(addprefix $(CORE_DIR)/srcs/, $(CORE_SRCS))"\
-		DEFINES="-DPARSE_STRATEGY=false"\
+		DEFINES="-DPARSE_STRATEGY=false -DPRINT_OPERATION=false"\
 		NAME="$(BONUS_NAME)"\
 
 # rules

@@ -17,7 +17,8 @@ extern void	sa(t_stack *stack, t_info *info)
 	int		tmp;
 
 	info->operation_count[SA]++;
-	ft_dprintf(STDOUT_FILENO, "sa\n");
+	if (PRINT_OPERATION == true)
+		ft_dprintf(STDOUT_FILENO, "sa\n");
 	if (stack->a != NULL && stack->a != stack->a->next)
 	{
 		tmp = stack->a->value;
@@ -31,7 +32,8 @@ extern void	sb(t_stack *stack, t_info *info)
 	int		tmp;
 
 	info->operation_count[SB]++;
-	ft_dprintf(STDOUT_FILENO, "sb\n");
+	if (PRINT_OPERATION == true)
+		ft_dprintf(STDOUT_FILENO, "sb\n");
 	if (stack->b != NULL && stack->b != stack->b->next)
 	{
 		tmp = stack->b->value;
@@ -45,7 +47,8 @@ extern void	ss(t_stack *stack, t_info *info)
 	int	tmp;
 
 	info->operation_count[SS]++;
-	ft_dprintf(STDOUT_FILENO, "ss\n");
+	if (PRINT_OPERATION == true)
+		ft_dprintf(STDOUT_FILENO, "ss\n");
 	if (stack->a != NULL && stack->a != stack->a->next)
 	{
 		tmp = stack->a->value;
