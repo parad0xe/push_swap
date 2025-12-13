@@ -1,18 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parse_stdin.h                                      :+:      :+:    :+:   */
+/*   checker_bonus.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldecavel <ldecavel@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/12 19:15:21 by ldecavel          #+#    #+#             */
-/*   Updated: 2025/12/12 19:15:59 by ldecavel         ###   ########.fr       */
+/*   Created: 2025/12/12 17:24:46 by ldecavel          #+#    #+#             */
+/*   Updated: 2025/12/13 20:40:11 by ldecavel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PARSE_STDIN_H
-# define PARSE_STDIN_H
+#ifndef CHECKER_BONUS_H
+# define CHECKER_BONUS_H
 
-void	parse_stdin(t_node **instructions, t_stack *stack);
+# include <unistd.h>
+# include "push_swap.h"
+
+typedef void (*t_operation_function)(t_stack *, t_info *);
 
 #endif

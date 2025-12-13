@@ -15,7 +15,7 @@ MAKEFLAGS += -j $$(nproc)
 
 # files
 MANDATORY_SRCS =\
-		   main.c\
+		   push_swap.c\
 		   bench.c\
 		   debug.c\
 		   algorithms/simple.c\
@@ -23,8 +23,8 @@ MANDATORY_SRCS =\
 		   algorithms/complex.c\
 
 BONUS_SRCS =\
-		main.c\
-		parse_stdin.c\
+		checker_bonus.c\
+		parse_stdin_bonus.c\
 
 CORE_SRCS =\
 	   operations/push.c\

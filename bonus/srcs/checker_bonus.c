@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   checker_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldecavel <ldecavel@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/12 14:17:19 by ldecavel          #+#    #+#             */
-/*   Updated: 2025/12/12 18:49:31 by ldecavel         ###   ########.fr       */
+/*   Updated: 2025/12/13 20:35:20 by ldecavel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h" // maybe some of them are useless
 #include "operations.h"
-#include "checker.h"
+#include "checker_bonus.h"
 #include "parse_input.h"
-#include "parse_stdin.h"
+#include "parse_stdin_bonus.h"
 #include "utils.h"
 
 #include <limits.h> // vraiment on doit ranger

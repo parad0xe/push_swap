@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parse_stdin.c                                      :+:      :+:    :+:   */
+/*   parse_stdin_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldecavel <ldecavel@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/12 18:39:55 by ldecavel          #+#    #+#             */
-/*   Updated: 2025/12/12 18:41:35 by ldecavel         ###   ########.fr       */
+/*   Updated: 2025/12/13 20:35:36 by ldecavel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h" // maybe some of them are useless
 #include "operations.h"
-#include "checker.h"
+#include "checker_bonus.h"
 #include "utils.h"
 #include "parse_input.h" //pour les errcodes
 
