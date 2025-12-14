@@ -6,7 +6,7 @@
 /*   By: ldecavel <ldecavel@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 19:53:05 by ldecavel          #+#    #+#             */
-/*   Updated: 2025/12/14 22:32:28 by ldecavel         ###   ########.fr       */
+/*   Updated: 2025/12/14 23:10:30 by ldecavel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,7 @@ static int	get_score(t_stack *stack, int b_index, int *rta, int *rtb)
 	t_node	*target;
 	int		score;
 
+	target = NULL;
 	get_target(stack, &target, b_index);
 	*rta = target_rotation(stack->a, stack->size_a, target->index);
 	*rtb = target_rotation(stack->b, stack->size_b, b_index);

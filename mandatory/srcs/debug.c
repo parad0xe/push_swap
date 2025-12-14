@@ -6,7 +6,7 @@
 /*   By: nlallema <nlallema@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 17:57:23 by nlallema          #+#    #+#             */
-/*   Updated: 2025/12/10 16:23:59 by nlallema         ###   ########lyon.fr   */
+/*   Updated: 2025/12/14 22:49:39 by ldecavel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,16 @@ void	print_stack(t_stack *stack)
 	{
 		if (a_current && (a_current != stack->a || i == 0))
 		{
-			printf("|%11d|", a_current->value);
+			printf("|%7d, ", a_current->value);
+			printf("%3d|", a_current->index);
 			a_current = a_current->next;
 		}
 		else
 			printf("|%11s|", " ");
 		if (b_current && (b_current != stack->b || i == 0))
 		{
-			printf("%11d|", b_current->value);
+			printf("|%7d, ", b_current->value);
+			printf("%3d|", b_current->index);
 			b_current = b_current->next;
 		}
 		else

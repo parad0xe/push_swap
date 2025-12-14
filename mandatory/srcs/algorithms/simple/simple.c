@@ -6,7 +6,7 @@
 /*   By: ldecavel <ldecavel@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 18:32:55 by ldecavel          #+#    #+#             */
-/*   Updated: 2025/12/14 22:32:06 by ldecavel         ###   ########.fr       */
+/*   Updated: 2025/12/14 23:13:56 by ldecavel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ extern int	target_rotation(t_node *stack, int size, int target_index)
 	else
 		return (0 - (size - r));
 }
-
+ 
 extern void	simple(t_stack *stack, t_info *info)
 {
 	int	n;
