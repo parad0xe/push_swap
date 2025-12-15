@@ -18,10 +18,10 @@ MANDATORY_SRCS =\
 		   push_swap.c\
 		   bench.c\
 		   debug.c\
-		   algorithms/simple/simple.c\
-		   algorithms/simple/target.c\
+		   algorithms/simple.c\
 		   algorithms/medium.c\
-		   algorithms/complex.c\
+		   algorithms/complex/complex.c\
+		   algorithms/complex/target.c\
 
 BONUS_SRCS =\
 		checker_bonus.c\
