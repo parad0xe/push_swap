@@ -47,6 +47,11 @@ To use the checker, run the following command :
 
 ### ALGORITHMS
 
+When the **_push_swap_** program is called without any flags or with the _adaptive_ flag, it uses the computed **disorder score**
+to pick the most appropriate algorithm. If the disorder score is below 20, it uses the **simple algorithm** which uses less
+operations to prepare its computing
+
+
 A detailed explanation and justification of the algorithms selected for this project
 must also be included.
 
