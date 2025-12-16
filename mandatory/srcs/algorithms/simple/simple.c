@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   complex.c                                          :+:      :+:    :+:   */
+/*   simple.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldecavel <ldecavel@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 18:32:55 by ldecavel          #+#    #+#             */
-/*   Updated: 2025/12/15 12:35:10 by ldecavel         ###   ########.fr       */
+/*   Updated: 2025/12/16 21:46:09 by ldecavel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ extern int	target_rotation(t_node *stack, int size, int target_index)
 		return (0 - (size - r));
 }
 
-extern void	complex(t_stack *stack, t_info *info)
+extern void	simple(t_stack *stack, t_info *info)
 {
 	int	n;
 	int	rta;

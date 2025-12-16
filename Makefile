@@ -17,11 +17,11 @@ MAKEFLAGS += -j $$(nproc)
 MANDATORY_SRCS =\
 		   push_swap.c\
 		   bench.c\
-		   algorithms/simple.c\
+		   algorithms/simple/simple.c\
+		   algorithms/simple/target.c\
 		   algorithms/medium/medium-helpers.c\
 		   algorithms/medium/medium.c\
-		   algorithms/complex/complex.c\
-		   algorithms/complex/target.c\
+		   algorithms/complex.c\
 
 BONUS_SRCS =\
 		checker_bonus.c\

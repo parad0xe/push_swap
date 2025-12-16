@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   simple.c                                           :+:      :+:    :+:   */
+/*   complex.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldecavel <ldecavel@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 13:49:17 by nlallema          #+#    #+#             */
-/*   Updated: 2025/12/16 14:07:29 by nlallema         ###   ########lyon.fr   */
+/*   Updated: 2025/12/16 21:45:53 by ldecavel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ static void	target_min(t_stack *stack, t_node **target, bool *direction)
 		*direction = LEFT;
 }
 
-extern void	simple(t_stack *stack, t_info *info)
+extern void	complex(t_stack *stack, t_info *info)
 {
 	t_node	*target;
 	bool	direction;
