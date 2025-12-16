@@ -6,12 +6,11 @@
 /*   By: ldecavel <ldecavel@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/14 19:53:05 by ldecavel          #+#    #+#             */
-/*   Updated: 2025/12/14 23:10:30 by ldecavel         ###   ########.fr       */
+/*   Updated: 2025/12/16 14:40:29 by nlallema         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "algorithms.h"
-#include "utils.h"
 
 static void	min_target(t_stack *stack, t_node **target)
 {

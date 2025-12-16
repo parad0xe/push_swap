@@ -6,15 +6,11 @@
 /*   By: ldecavel <ldecavel@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/12 18:39:55 by ldecavel          #+#    #+#             */
-/*   Updated: 2025/12/13 20:35:36 by ldecavel         ###   ########.fr       */
+/*   Updated: 2025/12/16 14:43:41 by nlallema         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "core.h" // maybe some of them are useless
-#include "operations.h"
-#include "checker_bonus.h"
-#include "utils.h"
-#include "parse_input.h" //pour les errcodes
+#include "parse_stdin_bonus.h"
 
 static void	handle_error(int errcode, t_stack *stack, t_node **instructions)
 {

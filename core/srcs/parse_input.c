@@ -1,20 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parser.c                                           :+:      :+:    :+:   */
+/*   parse_input.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldecavel <ldecavel@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 10:11:51 by ldecavel          #+#    #+#             */
-/*   Updated: 2025/12/12 16:09:37 by ldecavel         ###   ########.fr       */
+/*   Updated: 2025/12/16 14:33:38 by nlallema         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "core.h"
 #include "parse_input.h"
-#include "utils.h"
-#include "linked_list.h"
-#include <limits.h>
 
 static void	handle_error(int errcode, t_stack *stack, t_node **table)
 {

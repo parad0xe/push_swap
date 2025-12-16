@@ -6,12 +6,11 @@
 /*   By: ldecavel <ldecavel@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 15:01:27 by ldecavel          #+#    #+#             */
-/*   Updated: 2025/12/16 14:12:53 by nlallema         ###   ########lyon.fr   */
+/*   Updated: 2025/12/16 14:36:59 by nlallema         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "algorithms.h"
-#include "debug.h" // to remove
 
 static void	bucket_range(t_stack *stack, int bucket_size, int *min, int *max)
 {

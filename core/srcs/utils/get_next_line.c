@@ -6,7 +6,7 @@
 /*   By: ldecavel <ldecavel@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/28 10:27:10 by ldecavel          #+#    #+#             */
-/*   Updated: 2025/12/12 20:01:22 by ldecavel         ###   ########.fr       */
+/*   Updated: 2025/12/16 14:31:59 by nlallema         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ static bool	btol(t_gnl *gnl, t_rest *rest)
 	return (f_eol);
 }
 
-bool	get_next_line(int fd, char **s)
+extern bool	get_next_line(int fd, char **s)
 {
 	static t_rest	rest[FD_MAX] = {0};
 	t_gnl			gnl;

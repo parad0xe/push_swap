@@ -32,21 +32,21 @@ CORE_SRCS =\
 	   operations/reverse_rotate.c\
 	   operations/rotate.c\
 	   operations/swap.c\
-	   utils/libft/ft_abs.c\
-	   utils/libft/ft_atol.c\
-	   utils/libft/ft_dprintf.c\
-	   utils/libft/ft_isdigit.c\
-	   utils/libft/ft_issign.c\
-	   utils/libft/ft_isspace.c\
-	   utils/libft/ft_memset.c\
-	   utils/libft/ft_strcmp.c\
-	   utils/libft/max.c\
-	   utils/libft/get_next_line.c\
-	   utils/linked_list/list_clear.c\
-	   utils/linked_list/list_pop.c\
-	   utils/linked_list/list_push.c\
-	   utils/libft/approximate_sqrt.c\
-	   utils/libft/ft_ceil.c\
+	   utils/approximate_sqrt.c\
+	   utils/ft_abs.c\
+	   utils/ft_atol.c\
+	   utils/ft_ceil.c\
+	   utils/ft_dprintf.c\
+	   utils/ft_isdigit.c\
+	   utils/ft_issign.c\
+	   utils/ft_isspace.c\
+	   utils/ft_memset.c\
+	   utils/ft_strcmp.c\
+	   utils/get_next_line.c\
+	   utils/max.c\
+	   linked_list/list_clear.c\
+	   linked_list/list_pop.c\
+	   linked_list/list_push.c\
 	   parse_input.c\
 
 OBJS = $(MANDATORY_SRCS:%.c=$(BUILD)/%.o)

@@ -6,17 +6,11 @@
 /*   By: ldecavel <ldecavel@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/12 14:17:19 by ldecavel          #+#    #+#             */
-/*   Updated: 2025/12/16 14:09:32 by nlallema         ###   ########lyon.fr   */
+/*   Updated: 2025/12/16 14:42:29 by nlallema         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "core.h" // maybe some of them are useless
-#include "operations.h"
 #include "checker_bonus.h"
-#include "parse_input.h"
-#include "parse_stdin_bonus.h"
-#include "utils.h"
-#include <limits.h> // vraiment on doit ranger
 
 static bool	is_sorted(t_stack *stack)
 {

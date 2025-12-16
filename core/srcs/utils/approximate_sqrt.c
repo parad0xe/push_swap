@@ -1,20 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   approximate_sqrt.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldecavel <ldecavel@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: nlallema <nlallema@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/22 14:00:09 by ldecavel          #+#    #+#             */
-/*   Updated: 2025/12/10 18:49:50 by ldecavel         ###   ########.fr       */
+/*   Created: 2025/12/12 19:16:54 by nlallema          #+#    #+#             */
+/*   Updated: 2025/12/16 14:12:18 by nlallema         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "utils.h"
-
-void	*ft_memset(void *s, int c, size_t n)
+extern int	approximate_sqrt(int value)
 {
-	while (n--)
-		((uint8_t *)s)[n] = (uint8_t)c;
-	return (s);
+	long long	n;
+
+	n = 1;
+	while (n * n < value)
+		n = n << 1;
+	while (n * n > value)
+		n--;
+	return (n);
 }

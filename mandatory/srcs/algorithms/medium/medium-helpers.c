@@ -6,13 +6,11 @@
 /*   By: nlallema <nlallema@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 13:58:34 by nlallema          #+#    #+#             */
-/*   Updated: 2025/12/16 14:07:43 by nlallema         ###   ########lyon.fr   */
+/*   Updated: 2025/12/16 14:39:57 by nlallema         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "utils.h"
-#include "operations.h"
-#include "linked_list.h"
+#include "algorithms.h"
 
 extern int	list_get_min_greater_than(t_node *root, int size, int gt)
 {

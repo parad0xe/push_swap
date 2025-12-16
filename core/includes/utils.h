@@ -6,7 +6,7 @@
 /*   By: ldecavel <ldecavel@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/11 21:09:29 by ldecavel          #+#    #+#             */
-/*   Updated: 2025/12/16 14:12:29 by nlallema         ###   ########lyon.fr   */
+/*   Updated: 2025/12/16 14:55:22 by nlallema         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,4 @@ void	*ft_memset(void *s, int c, size_t n);
 int		max(int a, int b);
 int		ft_abs(int x);
 
-void	target_max(t_node *root, int size, t_node **target, bool *direction);
-void	pusha_max(t_stack *stack, t_info *info);
 #endif

@@ -6,12 +6,17 @@
 /*   By: ldecavel <ldecavel@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 11:33:34 by ldecavel          #+#    #+#             */
-/*   Updated: 2025/12/16 14:09:57 by nlallema         ###   ########lyon.fr   */
+/*   Updated: 2025/12/16 14:33:55 by nlallema         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PARSE_INPUT_H
 # define PARSE_INPUT_H
+
+# include <limits.h>
+# include "core.h"
+# include "utils.h"
+# include "linked_list.h"
 
 # define HASH_SIZE 0x10000
 

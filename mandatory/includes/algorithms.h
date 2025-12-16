@@ -6,16 +6,16 @@
 /*   By: ldecavel <ldecavel@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 14:57:44 by ldecavel          #+#    #+#             */
-/*   Updated: 2025/12/16 14:06:57 by nlallema         ###   ########lyon.fr   */
+/*   Updated: 2025/12/16 14:52:45 by nlallema         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ALGORITHMS_H
 # define ALGORITHMS_H
 
+# include <limits.h>
 # include "core.h"
 # include "operations.h"
-# include <limits.h>
 
 # define LEFT	0
 # define RIGHT	1

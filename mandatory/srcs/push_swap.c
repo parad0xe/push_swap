@@ -6,18 +6,14 @@
 /*   By: ldecavel <ldecavel@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 13:06:22 by ldecavel          #+#    #+#             */
-/*   Updated: 2025/12/16 14:07:06 by nlallema         ###   ########lyon.fr   */
+/*   Updated: 2025/12/16 14:37:30 by nlallema         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "algorithms.h"
+#include "bench.h"
 #include "core.h"
 #include "parse_input.h"
-
-#include "utils.h"
-#include "bench.h"
-#include "algorithms.h"
-
-#include "debug.h" // to remove
 
 static void	get_indexes(t_stack *stack)
 {
