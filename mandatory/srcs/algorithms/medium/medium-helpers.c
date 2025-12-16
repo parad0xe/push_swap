@@ -53,8 +53,9 @@ extern void	pusha_max(t_stack *stack, t_info *info)
 	t_node	*max_node;
 	bool	direction;
 
+	max_node = NULL;
 	target_max(stack->b, stack->size_b, &max_node, &direction);
-	while (stack->b != max_node)
+	while (max_node && stack->b != max_node)
 	{
 		if (direction == RIGHT)
 			rb(stack, info);
