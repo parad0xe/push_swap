@@ -17,7 +17,6 @@ MAKEFLAGS += -j $$(nproc)
 MANDATORY_SRCS =\
 		   push_swap.c\
 		   bench.c\
-		   debug.c\
 		   algorithms/simple.c\
 		   algorithms/medium/medium-helpers.c\
 		   algorithms/medium/medium.c\
