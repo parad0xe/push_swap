@@ -6,7 +6,7 @@
 /*   By: ldecavel <ldecavel@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 15:01:27 by ldecavel          #+#    #+#             */
-/*   Updated: 2025/12/15 14:13:10 by nlallema         ###   ########lyon.fr   */
+/*   Updated: 2025/12/16 13:31:05 by nlallema         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,30 +33,60 @@ static void	bucket_range(t_stack *stack, int bucket_size, int *min, int *max)
 	*max = value;
 }
 
-static void	pushb_next_bucket(t_stack *stack, t_info *info, int bucket_size)
+static int	target_first_in_range(t_stack *stack, int min, int max)
 {
 	t_node	*root;
-	int		range_min;
-	int		range_max;
+	int		distance;
 	int		stack_size;
 
-	bucket_range(stack, bucket_size, &range_min, &range_max);
 	stack_size = stack->size_a;
-	root = stack->a->previous;
-	while (stack_size-- >= 0)
+	distance = INT_MAX;
+	root = stack->a;
+	while (root && stack_size-- >= 0)
 	{
-		if (root->value >= range_min && root->value <= range_max)
-			break ;
-		root = root->previous;
+		if (root->value >= min && root->value <= max)
+		{
+			if (stack_size < stack->size_a - stack_size)
+			{
+				if (ft_abs(distance) > stack_size)
+					distance = -stack_size - 1;
+			}
+			else
+			{
+				if (ft_abs(distance) > stack->size_a - stack_size)
+					distance = stack->size_a - stack_size - 1;
+			}
+		}
+		root = root->next;
 	}
-	while (stack_size-- >= 0)
+	return (distance);
+}
+
+static void	pushb_next_bucket(t_stack *stack, t_info *info, int bucket_size)
+{
+	int		rt;
+	int		range_min;
+	int		range_max;
+
+	bucket_range(stack, bucket_size, &range_min, &range_max);
+	rt = 0;
+	while (rt != INT_MAX && bucket_size--)
 	{
-		if (stack->a->value >= range_min && stack->a->value <= range_max)
-			pb(stack, info);
-		else if (stack->size_b > 1 && stack->b->value < stack->b->next->value)
-			rr(stack, info);
-		else
-			ra(stack, info);
+		rt = target_first_in_range(stack, range_min, range_max);
+		while (rt != INT_MAX && rt > 0)
+		{
+			if (stack->size_b > 1 && stack->b->value < stack->b->next->value)
+				rr(stack, info);
+			else
+				ra(stack, info);
+			rt--;
+		}
+		while (rt != INT_MAX && rt < 0)
+		{
+			rra(stack, info);
+			rt++;
+		}
+		pb(stack, info);
 	}
 }
 
@@ -68,13 +98,7 @@ extern void	medium(t_stack *stack, t_info *info)
 	num_buckets = ft_approximate_sqrt(stack->size);
 	bucket_size = ft_ceil((double)stack->size / num_buckets);
 	while (num_buckets--)
-	{
 		pushb_next_bucket(stack, info, bucket_size);
-		//print_stack(stack);
-		//exit(1);
-	}
-	//print_stack(stack);
 	while (stack->size_b)
 		pusha_max(stack, info);
-	//print_stack(stack);
 }
