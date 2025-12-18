@@ -82,6 +82,8 @@ comes from discussions with other **42 students**.
   * Linked list  
   * Bench  
   * Medium algorithm  
+  * Complex algorithm
+  * README
   * Push_swap  
   
 [ldecavel](https://github.com/leonardecavele) :  
@@ -90,4 +92,6 @@ comes from discussions with other **42 students**.
   * Makefile  
   * Checker  
   * Simple algorithm  
+  * Complex algorithm
+  * README
   * Push_swap  
