@@ -66,6 +66,8 @@ extern void	medium(t_stack *stack, t_info *info)
 	int		bucket_size;
 
 	num_buckets = approximate_sqrt(stack->size) / 2;
+	if (num_buckets == 0)
+		num_buckets = 1;
 	bucket_size = ft_ceil((double)stack->size / num_buckets);
 	while (num_buckets--)
 		pushb_next_bucket(stack, info, bucket_size);
