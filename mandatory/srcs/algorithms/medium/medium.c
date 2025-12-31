@@ -6,7 +6,7 @@
 /*   By: ldecavel <ldecavel@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/11 15:01:27 by ldecavel          #+#    #+#             */
-/*   Updated: 2025/12/31 04:08:10 by nlallema         ###   ########.fr       */
+/*   Updated: 2025/12/31 04:10:54 by nlallema         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ extern void	medium(t_stack *stack, t_info *info)
 {
 	int	bucket_size;
 	int	current_bucket;
-	
+
 	bucket_size = ((double)approximate_sqrt(stack->size / 0.3));
 	if (bucket_size == 0)
 		bucket_size = 1;
