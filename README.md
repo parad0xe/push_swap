@@ -71,11 +71,71 @@ to the memory required to store the stacks and the associated indexes.
 
 #### Medium
 
+##### Description
+
 If the disorder score is between 0.20 (included) and 0.50 (excluded), the program uses the medium algorithm in order to minimize the number of operations on moderately sorted inputs. It works well on uniformly distributed inputs because the sort is divided into buckets by range, which results in a pre-sorted input regardless of the initial value positions.
 
-The algorithm works on **bucket sort** system model. The numbers are dispatched into multiple __buckets__ defined by the square root of the number of elements. Each bucket has a range of values it can contain, and the numbers are pushed into buckets in ascending range order. When all numbers are added to their respective buckets, a search for the maximum value is performed in descending order of buckets (high range -> low range), resulting a sorted input.
+The algorithm works on the **bucket sort** system model. The numbers are dispatched into multiple __buckets__ defined by the square root of the number of elements. Each bucket has a range of values it can contain, and the numbers are pushed into buckets in ascending range order. When all numbers are added to their respective buckets, a search for the maximum value is performed in descending order of buckets (high range -> low range), resulting in a sorted input.
 
-The algorithm's complexity is **O(n√n)** in push_swap operations due to the division into buckets. **N** elements are dispatched into their respective buckets. During the final sorting phase, the search for the maximum value is limited to a single bucket, since the value range guarantees its location. Space complexity is **O(n)**, which corresponds to the memory required to store the stacks and the associated indexes.
+##### Theorical concept and complexity
+
+###### Define variables
+
+```txt
+n = number of elements
+w = number of buckets
+k = bucket size
+ɑ = bucket size scaling factor
+
+ɑ = 1 ∕ √0.3
+k = √n · ɑ
+w = n ∕ k = n ∕ √n
+```
+
+The bucket size is scaled (by **ɑ**) to optimize its size depending on the expected disorder in stack B. If the disorder in stack B increases, the bucket size decreases, resulting in more buckets to compensate for this disorder, and vice versa.
+
+The square root of the disorder value is used for better scaling control because the scaling of the bucket size is not proportional to the expected disorder in stack B. The variation in bucket size must be smooth and not excessive, even with small or large values of disorder.
+
+###### Phase 1 - dispersion [stack A -> stack B]
+
+In this phase, we will create all the buckets one by one, from lowest to highest.
+
+in the worst case the complexity is represented by:
+
+```txt
+        n       n²
+w · n = ― · n = ― = O(n²)
+        k       k
+```
+
+###### Phase 2 - selection sort [stack B -> stack A]
+
+In this final phase, we will sort all the values in ascending order, progressively placing the maximum value into the stack A at each step. The current top bucket will necessarily contain the highest value from the inputs.
+
+in the worst case the complexity is represented by:
+
+```txt
+         n
+w · k² = ― · k² = n · k = O(n · √n)
+         k
+```
+
+> k² is the complexity of trivial sort algorithm used for sort the bucket
+
+###### Total operations cost
+
+```txt
+phase 1 + phase 2 = O(n²) + O(n · √n) = O(n²)
+```
+
+The class complexity of this implementation is **O(n²)** due to the push and rotations operations used for create all the buckets, but in standard implementation based on array and hashmap data structure, the resulting class complexity is:
+
+`O(n) + O(n · √n) = O(n · √n)`
+
+###### Total space cost
+
+Space complexity is **O(n)**, which corresponds to the memory required to store the stacks and the associated indexes.
+
 
 #### Complex
 If the disorder score is above or equal to 0.50, the program uses the **complex algorithm** in order to minimize the number of operations on highly
@@ -107,7 +167,8 @@ designs actually comes from discussions with other **42 students**.
 [Wikipedia : Cocktail shaker sort](https://en.wikipedia.org/wiki/Cocktail_shaker_sort)  
 [Wikipedia : Donald Knuth](https://en.wikipedia.org/wiki/Donald_Knuth)  
 [Wikipedia : Time complexity](https://en.wikipedia.org/wiki/Time_complexity)  
-[Wikipedia : Radix sort](https://en.wikipedia.org/wiki/Radix_sort)
+[Wikipedia : Radix sort](https://en.wikipedia.org/wiki/Radix_sort)  
+[Medium : Least amount of moves with two stacks](https://medium.com/%40jamierobertdawson/push-swap-the-least-amount-of-moves-with-two-stacks-d1e76a71789a)
 
 ### CONTRIBUTIONS
 
